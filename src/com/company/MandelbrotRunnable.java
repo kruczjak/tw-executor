@@ -1,11 +1,12 @@
 package com.company;
 
-import java.awt.Graphics;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.concurrent.*;
-import javax.swing.JFrame;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class MandelbrotRunnable extends JFrame {
     public static final int MAX_ITER = 570;
@@ -36,15 +37,5 @@ public class MandelbrotRunnable extends JFrame {
     @Override
     public void paint(Graphics g) {
         g.drawImage(I, 0, 0, this);
-    }
-
-    public static void main(String[] args) {
-        try {
-            new Mandelbrot().setVisible(true);
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 }
