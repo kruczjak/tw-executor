@@ -6,8 +6,8 @@ import java.awt.image.BufferedImage;
 
 public class Mandelbrot extends JFrame {
 
-    private final int MAX_ITER = 10000;
-    private final double ZOOM = 5000;
+    private final int MAX_ITER = 100000;
+    private final double ZOOM = 50000;
     private BufferedImage I;
     private double zx, zy, cX, cY, tmp;
 
