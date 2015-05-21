@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
 
 /**
  * Created by kruczjak on 5/20/15.
@@ -20,9 +19,9 @@ public class Worker implements Callable<Worker> {
     @Override
     public Worker call() throws Exception {
         zx = zy = 0;
-        cX = (x - 400) / Mandelbrot.ZOOM;
-        cY = (y - 300) /  Mandelbrot.ZOOM;
-        this.iter = Mandelbrot.MAX_ITER;
+        cX = (x - 400) / MandelbrotFuture.ZOOM;
+        cY = (y - 300) /  MandelbrotFuture.ZOOM;
+        this.iter = MandelbrotFuture.MAX_ITER;
         while (zx * zx + zy * zy < 4 && this.iter > 0) {
             tmp = zx * zx - zy * zy + cX;
             zy = 2.0 * zx * zy + cY;
